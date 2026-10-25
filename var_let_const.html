@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Global Scope
+        var a = "Hi its Sara";
+        var a = "Hi its Asiya"; //redeclare allow
+        a = "Hi its Miran";//re-assign allowed
+        console.log(a);
+
+        let b = "Hello Sunil";
+
+        console.log(b);
+
+        const c = "Hi its Amina";
+        // c = "where are U";
+        console.log(c);
+
+        //using if condition
+        if (10 == 10) {
+            var y = 'Hello Sonal';//Global Scope
+            let x = "Hello Neha";//Global scope;
+            const z = "Hello Samrudhi";//block Scope
+            console.log(x);
+            console.log(z);
+        }
+        console.log(y);
+        //   console.log(x); //var_let_const.html:31 Uncaught ReferenceError: x is not defined;
+        //   console.log(x); //var_let_const.html:31 Uncaught ReferenceError: x is not defined;
+
+    </script>
+</body>
+
+</html>

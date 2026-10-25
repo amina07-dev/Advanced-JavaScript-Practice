@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        //promise 1
+        let p1 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Apple ready"), 5000)
+        });
+        //promise 2
+        let p2 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Banana ready"), 5000)
+        });
+        //promise 3
+        let p3 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Grapes ready"), 5000)
+        });
+        Promise.all([p1, p2, p3])
+            .then(result => {
+                document.write("<h3>All Fruits are ready</h3>");
+                result.forEach(item => document.write(item + "<br>"));
+            })
+            .catch(error => {
+                document.write("<h3 style='color:red'>One or more promise are failed</h3>")
+            })
+    </script> -->
+    <script>
+        //promise 1
+        let p1 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Apple ready"), 5000)
+        });
+        //promise 2
+        let p2 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Banana ready"), 5000)
+        });
+        //promise 3
+        let p3 = new Promise(function (resolve) {
+            setTimeout(() => resolve("Grapes ready"), 5000)
+        });
+        Promise.all([p1, p2, p3])
+            .then(result => {
+                document.write("<h3>All Fruits are ready</h3>");
+                result.forEach(item => document.write(item + "<br>"));
+            })
+            .catch(error =>{
+                document.write("<h3 style='color:red'>One or more promise are failed</h3>")
+            })
+    </script>
+</body>
+</html>

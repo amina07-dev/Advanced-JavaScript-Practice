@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //parent class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            showInfo() {
+                document.write(`<h1>Person Info :</h1>Name :${this.name}<br>Age:${this.age}<br>`);
+            }
+        }
+        //child class
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+                this.rollNo = rollNo;
+            }
+            showStudent() {
+                super.showInfo();
+                document.write(`<h1>Student Info :</h1>Name :${this.name}<br>Age:${this.age}<br>`);
+            }
+        }
+        class GraduateStudent extends Student {
+            constructor(name, age, rollNo, degree) {
+                super(name, age, rollNo);
+                this.degree = degree;
+            }
+            showGraduate() {
+                document.write(`Degree = ${this.degree}`)
+            }
+        }
+        const g1 = new GraduateStudent("Aysan", 21, 223, "BCA");
+        g1.showStudent();//from student
+        g1.showGraduate();//from graduatestudent
+        g1.showInfo();//from person
+    </script>
+</body>
+
+</html>

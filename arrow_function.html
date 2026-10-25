@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.function without parameter
+        //--old style--
+        function hello() {
+            console.log("Hello Function");
+        }
+        hello();//Function call
+
+        //--arrow function--
+        const helloArrow = () => {
+            console.log("Hello Arrow Function");
+        }
+        helloArrow();//Function call
+
+        //2.function with one parameter
+        //--old style--
+        function welcome(name) {
+            console.log("Welcome Function " + name);
+        }
+        welcome("sara");//Function call
+
+        //--arrow function--
+        const WelcomeArrow = name =>
+            console.log("Welcome Arrow Function " + name);
+
+        WelcomeArrow("Aman");//Function call
+
+        //3.function with Multiple parameter
+        //--old style--
+        function add(a, b) {
+            console.log(a + b);
+        }
+        add(10, 20);//Function call
+
+        //--arrow function--
+        const addArrow = (a, b) =>
+            console.log(a + b);
+
+        addArrow(20, 20);//Function call
+
+        //4.function with return value
+        //--old style--
+        function addition(x, y) {
+            return x + y;
+        }
+        let result1 = addition(23, 23)
+        console.log(result1);
+        //--arrow function
+        const additionArrow = (x, y) => x + y;
+
+        let result2 = addition(40, 40)
+        console.log(result2);
+
+
+        //5.function  return string
+        //--old style--
+        function sayHello(name) {
+            return "Hello " + name;
+        }
+
+        console.log(sayHello('sara'));
+        //--arrow function
+
+        const sayHelloArrow = (name) => {
+            return "Hello " + name;
+        }
+        console.log(sayHelloArrow('Shaikh'));
+
+        // 6.Arrow function with Template literal
+        const fullName = (fname, lname) => `${fname} ${lname}`;
+        console.log(fullName("Sara", "Shaikh"))
+
+        //7.Multiple Statement in arrow Function
+        //--old style--
+        function calculate(a, b) {
+            let sum = a + b;
+            let result = sum * 2;
+            return result;
+        }
+        console.log(calculate(10, 20));
+
+        const calculateArrow = (a, b) => {
+            let sum = a + b;
+            let result = sum * 2;
+            return result;
+        }
+        console.log(calculateArrow(20, 20));
+
+        //8.Arrow function returning object
+        const getStudent = () => ({
+            name: "Sara",
+            address: "yeola",
+            position: "Student",
+        });
+        console.log(getStudent());
+
+        //Arrow function = A short way of writing a function expression using => 
+    </script>
+
+</body>
+
+</html>

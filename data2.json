@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Amina",
+    "age": 25,
+    "city": "Mumbai",
+    "skill": ["JavaScript", "TypeScript", "React"]
+  },
+  {
+    "name": "Priya ",
+    "age": 28,
+    "city": "Pune",
+    "skill": ["Python", "Django", "SQL"]
+  },
+  {
+    "name": "Rohan ",
+    "age": 23,
+    "city": "Bengaluru",
+    "skill": ["C++", "Java", "Data Structures"]
+  },
+  {
+    "name": "Sneha ",
+    "age": 30,
+    "city": "Nashik",
+    "skill": ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    "name": "Sara ",
+    "age": 26,
+    "city": "Delhi",
+    "skill": ["Go", "Docker", "Kubernetes"]
+  }
+]

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Promise Means : I am doing some work now. I will give you the result later.If the work is done successfully then I will give you the result otherwise I will give you the error. -->
+
+    <!-- for example:
+    -calling an API
+    -ferching data from server
+    -Readinga file
+    -database operation
+    -waiting for timer
+
+    Total 3 states of promise 
+    1.Pending : Initial state,before the rejected succeeds or fails.
+    2.Fulfilled : The operation completed successfully.
+    3.Rejected : The operation failed.
+
+    Create a Promise
+    Syntax
+    let promise = new promise(function(resolve,reject){
+
+    }); -->
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+            let success = false;
+            if (success) {
+                resolve("Operation Sucessfully");
+            }
+            else {
+                reject("Operation Failed");
+            }
+        });
+    </script>
+    <script>
+        function login(username, password) {
+            return new Promise(function (resolve, reject) {
+                if (username === "admin" && password === "1234") {
+                    resolve("Login Successfully");
+                }
+                else {
+                    reject("Invalid username or password");
+                }
+            });
+        }
+        login("admin", "1234")
+            .then(function (result) {
+                console.log(result);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    </script>
+    <!-- <script>
+        //creating a Promise using Promp - user input
+
+        let promise2 = new Promise(function (resolve2, reject2) {
+            let username = prompt("Enter UserName : ");
+            let password = prompt("Enter Password");
+
+            if (username === "admin" && password === "1234") {
+                resolve2("Login Successfully");
+            }
+            else {
+                reject2("Invalid username or password");
+            }
+        });
+        promise2
+            .then(msg => {
+                document.write("<h2 style='color:green'>" + msg + "</h2>");
+            })
+            .catch(err => {
+                document.write("<h2 style='color:red'>" + err + "</h2>");
+            })
+            .finally(() => {
+                document.write("<p style='color:blue'>Login attempt Completed</p>");
+
+            })
+    </script> -->
+    <script>
+        let promise3 = new Promise((resolve, reject) => {
+            console.log("Fetching data....");
+
+            setTimeout(() => {
+                let dataAvailabe = false;
+                if (dataAvailabe) {
+                    resolve("Data Received from server...Successfully");
+                }
+                else {
+                    reject("Server Error ... Something went wrong.");
+                }
+            }, 5000)
+        });
+        promise3
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+            .finally(() => console.log("Request process complete..."));
+    </script>
+    <!-- <script>
+        // 1. Post Data - Resolves successfully
+        function getPostData() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve("Post data loaded successfully");
+                }, 2000);
+            });
+        }
+
+        // 2. Student Data - Resolves successfully
+        function getStudentData() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve("Student profile loaded successfully");
+                }, 3000);
+            });
+        }
+
+        // 3. Attendance Data - Configured to Reject
+        function getAttendanceData() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    // Rejecting this promise explicitly
+                    reject("Attendance server is currently down");
+                }, 1500);
+            });
+        }
+
+        // Executing them concurrently using Promise.all
+        Promise.all([getPostData(), getStudentData(), getAttendanceData()])
+            .then(function (results) {
+                // This block will NOT run because attendance rejected
+                document.write("<h3>All data loaded successfully:</h3>");
+                results.forEach(item => document.write(item + "<br>"));
+            })
+            .catch(function (error) {
+                // Execution jumps straight here as soon as getAttendanceData rejects
+                document.write("<h3 style='color:red'>Data fetching failed!</h3>");
+                document.write("<p style='color:red'>Error Details: " + error + "</p>");
+                console.log("Error:", error);
+            });
+    </script> -->
+
+</body>
+
+</html>

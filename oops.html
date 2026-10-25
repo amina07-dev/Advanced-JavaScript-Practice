@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // constructor METHOD
+        class student11 {
+            constructor() {
+                document.write("Hello Constructor call directly" + "<br>");
+            }
+        }
+        let s = new student11();
+
+    </script>
+    <script>
+        //A constructor is a special method inside a class that is automatically calledd when we create object
+        class person {
+            constructor(name, age) {//Constructor Method
+                this.p_name = name; //Assign value to the object property
+                this.p_age = age;  //Refers to the current object being created
+                this.display();//Method called inside counstructor
+            }
+            display() {
+                document.write(`Name :${this.p_name},  Age:${this.p_age}<br>`);
+            }
+        }
+        const s1 = new person("Sara", 21); //Constructor called automatically
+        const s2 = new person("Amina", 25);
+        const s3 = new person("Kasif", 26);
+        // s1.display();
+        // s2.display();
+        // s3.display();
+    </script>
+    <script>
+        class student101 {
+            //constructor method
+            constructor(name, course) {
+                this.name = name;
+                this.course = course;
+                this.display();
+            }
+            //Normal Method
+            display() {
+                console.log(`Name : ${this.name}`);
+                console.log(`Course : ${this.course}`);
+            }
+            //Static Method
+            static collegeName() {
+                console.log("CMCS");
+            }
+        }
+        let student_s = new student101('Anil', 'IT');
+        student_s.display();
+
+        //calling Static method using classname - classname.staticMethod name
+        //static method belongs only to that class
+        student101.collegeName();
+    </script>
+</body>
+
+</html>

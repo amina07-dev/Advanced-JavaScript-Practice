@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //parent class
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            showInfo() {
+                document.write(`<h1>Person Info :</h1>Name :${this.name}<br>Age:${this.age}<br>`);
+            }
+        }
+        //child class
+        class Student extends Person {
+            constructor(name, age, rollNo) {
+                super(name, age);
+                this.rollNo = rollNo;
+            }
+            showStudent() {
+                super.showInfo();
+                document.write(`<h1>Student Info :</h1>Name :${this.name}<br>Age:${this.age}<br>`);
+            }
+        }
+        const s1 = new Student("Sara", 20, "1100");
+        s1.showStudent();
+        const s2 = new Student("Amina", 26, "1200");
+        s2.showStudent();
+    </script>
+    <script>
+        // Parent class
+        class Person_1 {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            showInfo() {
+                document.write(`<h1>Profile Info :</h1>- Name: ${this.name}<br>- Age: ${this.age}<br>`);
+            }
+        }
+
+        // New Child class for Employees
+        class Employee extends Person_1 {
+            constructor(name, age, empId, salary) {
+                super(name, age);       // Passes name and age to the Person parent class
+                this.empId = empId;     // Unique employee property
+                this.salary = salary;   // Unique employee property
+            }
+
+            showEmployee() {
+                super.showInfo();       // Reuses parent method to display Name and Age
+                document.write(`- Employee ID: ${this.empId}<br>- Salary: ${this.salary}<br>`);
+            }
+        }
+
+        // Execution Example:
+        const emp1 = new Employee("Jennie Kim", 34, "E-9042", 75000);
+        emp1.showEmployee();
+    </script>
+
+</body>
+
+</html>

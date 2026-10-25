@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var name = "sara";
+        var address = "Nashik";
+        var phone = "9789806547";
+
+        //normal string concatination
+        document.write(
+            "My name is " + name + " I am from  " + address + " Contact me on " + phone + "<br>"
+        );
+
+        document.write(
+            `My name is ${name} I am From ${address} Contact me on ${phone} `
+        );
+
+    </script>
+    <script>
+        var fname = "Sara";
+        var lname = "Shaikh";
+
+        function fullname(fname, lname) {
+
+            return `${fname} ${lname}`;
+        }
+        let flName = `Hello ${fullname(fname,lname)}`;
+        document.write("<br>");
+        document.write(fullname(fname, lname));
+        document.write("<br>");
+        document.write(flName);
+        console.log(flName);
+
+    </script>
+</body>
+
+</html>
