@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- clearTimeout() -> cancel a scheduled TimeOut -->
+    <h2>Cancel TimeOut Example</h2>
+    <button onclick="startTimer()">Start Timer</button>
+    <button onclick="cancelTimer()">Cancel Timer</button>
+    <p id="message2">Click start Timer....</p>
+    <script>
+        let timerId;
+        function startTimer() {
+            timerId = setTimeout(function () {
+                document.getElementById("message2").textContent = "Hello students...."
+            }, 1000)
+        }
+        function cancelTimer() {
+            clearTimeout(timerId);
+            document.getElementById("message2").textContent = "Timer Canceled"
+        }
+    </script>
+    <!-- clearIntervel() -stop repeated Execution -->
+
+    <h2>Counter with start and stop</h2>
+    <h1 id="count">0</h1>
+    <button onclick="startCounter()">start</button>
+    <button onclick="stopCounter()">Stop</button>
+    <script>
+        let count = 0;
+        let intervalId = null;
+        function startCounter() {
+            if (intervalId !== null) {
+                return;
+            }
+            intervalId = setInterval(function () {
+                count++;
+                document.getElementById("count").textContent = count;
+            }, 1000)
+        }
+        function stopCounter() {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    </script>
+    <h1 id="clock"></h1>
+    <script>
+        function showtime() {
+            let now = new Date();
+
+            let time = now.toLocaleTimeString();
+            document.getElementById("clock").textContent = time;
+        }
+        setInterval(showtime, 1000);
+    </script>
+</body>
+
+</html>
